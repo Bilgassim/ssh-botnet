@@ -57,7 +57,7 @@ def load_bots_from_file(botnet, file_path):
                 line = line.strip()
                 if not line or line.startswith('#'):
                     continue
-                parts = line.split(',')
+                parts = line.split('-')
                 if len(parts) == 3:
                     host, user, password = parts
                     add_client(botnet, host.strip(), user.strip(), password.strip())
@@ -69,7 +69,7 @@ def load_bots_from_file(botnet, file_path):
         return False
 
 if __name__ == "__main__":
-    file_path = input("Chemin du fichier de cibles (format: host,user,password) >> ")
+    file_path = input("Chemin du fichier de cibles (format: host-user-password) >> ")
     Botnet = []
     
     if load_bots_from_file(Botnet, file_path):

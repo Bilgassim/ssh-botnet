@@ -29,9 +29,9 @@ Instead of hardcoding credentials, you now provide a file containing your target
 Create a text file (e.g., `targets.txt`) with the following format (one line per server):
 
 ```text
-# host,username,password
-192.168.1.10,root,password123
-192.168.1.11,admin,pass456
+# host-username-password
+192.168.1.10-root-password123
+192.168.1.11-admin-pass456
 ```
 
 ## Running the Tool
@@ -42,7 +42,7 @@ Execute the script using Python 3:
 python3 ssh_botnet.py
 ```
 
-1. **File Prompt:** The script will ask: `Chemin du fichier de cibles (format: host,user,password) >> `.
+1. **File Prompt:** The script will ask: `Chemin du fichier de cibles (format: host-user-password) >> `.
    - Type the name of your file (e.g., `targets.txt`) and press Enter.
 2. **Command Prompt:** It will then ask: `Commande à exécuter >> `.
    - Type your command (e.g., `uptime`, `ls`, `whoami`) and press Enter.
